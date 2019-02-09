@@ -1,0 +1,27 @@
+---
+swagger: "2.0"
+
+info:
+  title: "Oye meri Mundya"
+  version: "1.0"
+basePath: /v1.0
+
+path:
+  /items/:
+    get:
+      responses:
+        '200':
+          description': 'Fetch a list of items'
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Item'
+definitions:
+  item:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+      name: { type: string }
+
